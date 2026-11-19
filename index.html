@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lao Game TopUp</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#100d1c;color:white;font-family:Arial,sans-serif}
+header{background:#211737;padding:22px;text-align:center}
+header h1{color:#c49aff;margin:0}
+header p{color:#c8bddb}
+main{max-width:850px;margin:auto;padding:20px}
+h2{color:#d4b5ff}
+.games{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.game{background:#261d3b;padding:20px;border-radius:15px;text-align:center;border:1px solid #493568}
+.game span{font-size:35px}
+.game button, .submit{background:#9b5cf6;color:white;border:0;padding:12px;border-radius:9px;width:100%;font-weight:bold;margin-top:12px}
+form{background:#261d3b;padding:20px;border-radius:15px;margin-top:25px}
+input,select{width:100%;padding:13px;margin:9px 0;border-radius:8px;border:0}
+footer{text-align:center;color:#aaa;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h1>💜 LAO GAME TOPUP</h1>
+<p>ຮ້ານເຕີມເກມອອນລາຍ</p>
+</header>
+<main>
+<h2>🎮 ເລືອກເກມ</h2>
+<div class="games">
+<div class="game">
+<span>🎯</span>
+<h3>Free Fire</h3>
+<button onclick="choose('Free Fire')">ເລືອກເກມ</button>
+</div>
+<div class="game">
+<span>⚔️</span>
+<h3>Mobile Legends</h3>
+<button onclick="choose('Mobile Legends')">ເລືອກເກມ</button>
+</div>
+<div class="game">
+<span>🎮</span>
+<h3>Roblox</h3>
+<button onclick="choose('Roblox')">ເລືອກເກມ</button>
+</div>
+<div class="game">
+<span>🏆</span>
+<h3>PUBG Mobile</h3>
+<button onclick="choose('PUBG Mobile')">ເລືອກເກມ</button>
+</div>
+</div>
+
+<form onsubmit="demo(event)">
+<h2>🛒 ສັ່ງຊື້</h2>
+<label>ເກມ</label>
+<select id="game">
+<option>Free Fire</option>
+<option>Mobile Legends</option>
+<option>Roblox</option>
+<option>PUBG Mobile</option>
+</select>
+<label>ແພັກເກດ</label>
+<select id="pack">
+<option>ເລືອກແພັກເກດ</option>
+<option>ແພັກເກດ 1</option>
+<option>ແພັກເກດ 2</option>
+<option>ແພັກເກດ 3</option>
+</select>
+<button class="submit">ທົດລອງສັ່ງຊື້</button>
+<p id="message"></p>
+</form>
+</main>
+<footer>© 2026 Lao Game TopUp</footer>
+<script>
+function choose(name){
+document.getElementById('game').value=name;
+document.querySelector('form').scrollIntoView({behavior:'smooth'});
+}
+function demo(e){
+e.preventDefault();
+document.getElementById('message').textContent=
+'ລະບົບທົດລອງເທົ່ານັ້ນ! ຍັງບໍ່ໄດ້ເປີດຮັບອໍເດີຈິງ.';
+}
+</script>
+</body>
+</html>
